@@ -1,0 +1,17 @@
+{
+  "name": "chaotic-mesh",
+  "short_name": "chaotic-mesh",
+  "description": "A private mesh gradient studio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101112",
+  "theme_color": "#101112",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

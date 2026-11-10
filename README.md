@@ -2,6 +2,8 @@
 
 A private Dark Studio for mesh gradients. Customize four colors and the mesh ID, add monochrome grain, and export full-resolution PNG, JPEG, or WebP images.
 
+![chaotic-mesh Dark Studio preview](docs/preview.png)
+
 ## Run locally
 
 Requires Node.js 20 or later (including the project-local Vercel CLI).

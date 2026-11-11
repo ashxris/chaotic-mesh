@@ -34,95 +34,52 @@ Open the local address printed by Vite. For a production build, run `npm run bui
 
 The 84 presets use exact four-color combinations from Color Hunt. Display names are studio names; colors, source references, and mesh IDs are kept together in `src/presets/palettes.js`.
 
-- [Fern light](https://colorhunt.co/palette/fff2b4e5cd82728e6d15370d)
-- [Meadow gold](https://colorhunt.co/palette/6a795d8e9162b2bd7ed9d28b)
-- [Citrus glow](https://colorhunt.co/palette/ff7e7effa259ffcb56ffedb9)
-- [Graphite bloom](https://colorhunt.co/palette/4a4a4ae2b4bdf7d6d0fff5f5)
-- [Lagoon light](https://colorhunt.co/palette/c4f7cad8ffc592eeff30afff)
-- [Citrus grove](https://colorhunt.co/palette/ff9d4dffde4ea1cb35769826)
-- [Pistachio peach](https://colorhunt.co/palette/bbf1d2eef8cdffc5aaff9d9d)
-- [Garden party](https://colorhunt.co/palette/689d4b91ae6ef2f2f2d96868)
-- [Lavender mist](https://colorhunt.co/palette/424874a6b1e1dcd6f7f4eeff)
-- [Sage & sand](https://colorhunt.co/palette/675d50abc4aaf3debaa9907e)
-- [Botanical](https://colorhunt.co/palette/e1f0dad4e7c5bfd8af99bc85)
-- [Forest floor](https://colorhunt.co/palette/2c39303f4f44a27b5cdcd7c9)
-- [Moss garden](https://colorhunt.co/palette/e6f2ddb1d3b988bda4659287)
-- [Olive grove](https://colorhunt.co/palette/504b38b9b28aebe5c2f8f3d9)
-- [Wildflower](https://colorhunt.co/palette/7469b6ad88c6e1afd1ffe6e6)
-- [Sunroom](https://colorhunt.co/palette/f9ed69f08a5db83b5e6a2c70)
-- [Terracotta](https://colorhunt.co/palette/f39e60e16a549f52557c444f)
-- [Apricot](https://colorhunt.co/palette/fff0beffd6a6ffb399ff9a86)
-- [Periwinkle](https://colorhunt.co/palette/eef1ffd2daffaac4ffb1b2ff)
-- [Blue hour](https://colorhunt.co/palette/f2efe7c8dfdb66a3bf3368a0)
-- [Twilight](https://colorhunt.co/palette/403d888b639baf719df8b2b2)
-- [Nightfall](https://colorhunt.co/palette/faf0e6b9b4c75c5470352f44)
-- [Golden wheat](https://colorhunt.co/palette/bdb395d5c7a3f2e2b1f6f0f0)
-- [Sea glass](https://colorhunt.co/palette/f9f7c9d5f0c1aad9bb80bcbd)
-
-- [Azure depth](https://colorhunt.co/palette/aaccd64382df4647ae112e81)
-- [Solar orbit](https://colorhunt.co/palette/e4ff30008bff5b23ff362f4f)
-- [Moonlit bay](https://colorhunt.co/palette/ffe3a98ccdeb725cad0b1d51)
-- [Iris field](https://colorhunt.co/palette/b5a8d57a73d14d55cc211c84)
-- [Lime orchid](https://colorhunt.co/palette/fffbcaaeea94b771e54635b1)
-- [Jade & iris](https://colorhunt.co/palette/d5e7b572baa97e5cad474e93)
-- [Amethyst](https://colorhunt.co/palette/c2d9ff8e8ffa7752fe190482)
-- [Ultraviolet](https://colorhunt.co/palette/e4f1ffaed2ff9400ff27005d)
-- [Magenta after dark](https://colorhunt.co/palette/ec53b09d44c04d2db70e21a0)
-- [Indigo tide](https://colorhunt.co/palette/8cabff4477ce512b8135155d)
-- [Violet storm](https://colorhunt.co/palette/c4b0ff8696fe4942e411009e)
-- [Midnight bloom](https://colorhunt.co/palette/d4adfc5c469c1d267d0c134f)
-- [Peacock](https://colorhunt.co/palette/77037b210062009fbdf9e2af)
-- [Cobalt moon](https://colorhunt.co/palette/3795bd2f58cd4e31aa3a1078)
-- [Wisteria ice](https://colorhunt.co/palette/eeeeeebfdce53e54acad7be9)
-- [Morning haze](https://colorhunt.co/palette/946d6da290b7b0cde6fdf4d2)
-- [Cotton petal](https://colorhunt.co/palette/c5b3d3f5cbcbffe2e2fbefef)
-- [Hydrangea](https://colorhunt.co/palette/d9f9dfaee2ffb5baff9fa1ff)
-- [Amber violet](https://colorhunt.co/palette/e8ddb4dec384daa464767f9e)
-- [Orchard bloom](https://colorhunt.co/palette/84c5b1accfa3f0e9b6744577)
-- [Cloud ribbon](https://colorhunt.co/palette/9b8ec7bda6ceb4d3d9f2eae0)
-- [Peach dusk](https://colorhunt.co/palette/ffdab3c8aaaa9f8383574964)
-- [Petal blue](https://colorhunt.co/palette/f2aebbf5d3c4a7aae1696fc7)
-- [Lilac peach](https://colorhunt.co/palette/687fe5ebd6fbfeebf6fcd8cd)
-- [Vanilla iris](https://colorhunt.co/palette/898ac4a2aadbc0c9eefff2e0)
-- [Orchid dawn](https://colorhunt.co/palette/ffe1e0f49bab9b7ebd7f55b1)
-- [Sorbet meadow](https://colorhunt.co/palette/8e7dbea6d6d6f4f8d3f7cfd8)
-- [Almond lilac](https://colorhunt.co/palette/fff7f3fad0c4e6b2bac599b6)
-- [Lavender grove](https://colorhunt.co/palette/8d77abf9f6e6e1eacdbad8b6)
-- [Apricot nebula](https://colorhunt.co/palette/ffd2a0efb6c8a888b58174a0)
-- [Emerald canopy](https://colorhunt.co/palette/8bbb922a835f12544f092328)
-- [Pine hollow](https://colorhunt.co/palette/2733382b57486187649cb080)
-- [Lemon shadow](https://colorhunt.co/palette/1b0c0c313e174c5c2dffde42)
-- [Forest dew](https://colorhunt.co/palette/b0e4cc408a71285a48091413)
-- [Harvest fern](https://colorhunt.co/palette/ebd5ab8bae666281411b211a)
-- [Juniper peach](https://colorhunt.co/palette/f9f6f3f5c9b0a6b28b1c352d)
-- [Tangerine fern](https://colorhunt.co/palette/d3eccd06923e212121e67514)
-- [Deep forest](https://colorhunt.co/palette/1f7d53255f3827391c18230f)
-- [Persimmon grove](https://colorhunt.co/palette/33372c557c56ffe5cfff885b)
-- [Marigold moss](https://colorhunt.co/palette/45474b379777f4ce14f5f7f8)
-- [Spring midnight](https://colorhunt.co/palette/141e4641b06e8decb4fff5e0)
-- [Autumn ember](https://colorhunt.co/palette/bed754e3651d750e21191919)
-- [Woodland cream](https://colorhunt.co/palette/fde5d4d6cc99445d48001524)
-- [Olive current](https://colorhunt.co/palette/d3d04f8eac5017594a213363)
-- [Fern bark](https://colorhunt.co/palette/d2d79f90b77d42855b483838)
-- [Linen](https://colorhunt.co/palette/c9b59cd9cfc7efe9e3f9f8f6)
-- [Oat milk](https://colorhunt.co/palette/fbf3d1deded1c5c7bcb6ae9f)
-- [Sand & sky](https://colorhunt.co/palette/cfab8dd9c4b0eceedfbbdce5)
-- [Stone path](https://colorhunt.co/palette/ecebded7d3bfc1baa1a59d84)
-- [Cocoa cream](https://colorhunt.co/palette/3b3030664343795757fff0d1)
-- [Honey butter](https://colorhunt.co/palette/d8ae7ef8c794ffe0b5fff2d7)
-- [Warm parchment](https://colorhunt.co/palette/fff2e1ead8c0d1bb9ea79277)
-- [Driftwood](https://colorhunt.co/palette/b2a59bded0b6faeed1607274)
-- [Wheat silk](https://colorhunt.co/palette/bbab8cded0b6faeed1fdf7e4)
-- [Soft taupe](https://colorhunt.co/palette/776b5db0a695ebe3d5f3eeea)
-- [Caramel light](https://colorhunt.co/palette/fae7c9e1c78fb0926a706233)
-- [Rosewood](https://colorhunt.co/palette/f9f5e7f8ead8eddbc7a7727d)
-- [Mushroom dusk](https://colorhunt.co/palette/f1d3b3c7bca18b7e7465647c)
-- [Espresso cream](https://colorhunt.co/palette/594545815b5b9e7676fff8ea)
-- [Dune shadow](https://colorhunt.co/palette/eddfb3d8cca3b09b7187805e)
-
 Scroll the palette strip horizontally with a trackpad, touch, Shift + mouse wheel, or the previous/next buttons. The strip is keyboard focusable, and each preset is a normal keyboard-accessible button.
 
 Preset thumbnails are generated locally with the unchanged gradient engine at 4K landscape and zero grain. Only cards near the scroll viewport are generated, one at a time; the current editor settings are restored after each preview. Until a thumbnail is ready, the card shows its four actual colors. No remote images or runtime Color Hunt requests are used.
+
+## Layout structure
+
+### Project files
+
+```text
+chaotic-mesh/
+├── docs/                    README preview image
+├── public/                  Static assets (favicon, robots.txt)
+├── src/
+│   ├── App.svelte           Studio shell: canvas, controls, palette strip
+│   ├── main.js              Svelte entry point
+│   ├── core/                Unchanged WebGL gradient engine
+│   │   ├── index.js
+│   │   ├── stripe.gradient.js
+│   │   └── webgl.js
+│   ├── lib/
+│   │   ├── ExportDialog.svelte   Size, format, and quality dialog
+│   │   ├── Icon.svelte           Inline SVG icon set
+│   │   ├── PreviewCanvas.svelte  Scaled canvas preview
+│   │   ├── store/index.js        Svelte stores for colors and presets
+│   │   └── utils/
+│   │       ├── density.js        300-DPI metadata for PNG, JPEG, WebP
+│   │       ├── exportImage.js    Encoding and download helpers
+│   │       ├── framing.js        Centered crop framing adapter
+│   │       ├── grain.js          Deterministic grain pass
+│   │       └── renderer.js       Renderer lifecycle and size limits
+│   ├── presets/palettes.js      84 palette entries and mesh IDs
+│   └── styles/studio.scss       Dark studio styles and breakpoints
+├── tests/                   Node test suites for export and framing
+├── index.html               Vite HTML shell
+├── vite.config.js           Vite + Svelte configuration
+└── vercel.json              Vercel build configuration
+```
+
+### Page layout
+
+- The header holds the wordmark, a short note, and the Export button.
+- The intro block contains the studio title and the edition badge.
+- The workspace is a two-column layout: the preview section on the left, and the controls aside on the right. Controls cover the composition seed, four color swatches with hex inputs, grain, and the randomize/export actions.
+- The presets section sits below the workspace with a heading, previous/next buttons, and a horizontally scrolling grid of palette cards.
+- The footer closes the page; the export dialog opens as a modal overlay with a preview panel and export controls.
+- Breakpoints at 1450, 1100, 800, and 560 pixels adapt the workspace, controls, palette grid, and footer.
 
 ## Implementation
 

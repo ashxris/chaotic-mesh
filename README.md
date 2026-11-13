@@ -19,7 +19,7 @@ Open the local address printed by Vite. For a production build, run `npm run bui
 
 - Change colors using the swatches or six-digit hex fields. Use a mesh ID to recreate a composition.
 - Shuffle the composition with the button or the space bar while outside an input or button.
-- Choose one of 84 Color Hunt palettes to get started. Reset restores the original palette, mesh ID, and zero grain.
+- Choose one of 85 palettes, including Black & white, to get started. Reset restores the original palette, mesh ID, and zero grain.
 - Adjust grain with the slider or type a whole-number percentage from 0–100. Both controls stay in sync; out-of-range values are clamped.
 - Open Export from the header or the button directly below the space-bar hint.
 - Grain is a deterministic monochrome finishing layer: 0% leaves the original pixels unchanged.
@@ -32,9 +32,9 @@ Open the local address printed by Vite. For a production build, run `npm run bui
 
 ## Palette sources
 
-The 84 presets use exact four-color combinations from Color Hunt. Display names are studio names; colors, source references, and mesh IDs are kept together in `src/presets/palettes.js`.
+The presets include 84 exact four-color combinations from Color Hunt and one original Black & white palette. Display names are studio names; colors, source references, and mesh IDs are kept together in `src/presets/palettes.js`.
 
-Scroll the palette strip horizontally with a trackpad, touch, Shift + mouse wheel, or the previous/next buttons. The strip is keyboard focusable, and each preset is a normal keyboard-accessible button.
+Browse all 85 palettes in a responsive grid by scrolling down the page. Each preset is a normal keyboard-accessible button. Black & white is the first card and blends black, two neutral grays, and white.
 
 Preset thumbnails are generated locally with the unchanged gradient engine at 4K landscape and zero grain. Only cards near the scroll viewport are generated, one at a time; the current editor settings are restored after each preview. Until a thumbnail is ready, the card shows its four actual colors. No remote images or runtime Color Hunt requests are used.
 
@@ -47,7 +47,7 @@ chaotic-mesh/
 ├── docs/                    README preview image
 ├── public/                  Static assets (favicon, robots.txt)
 ├── src/
-│   ├── App.svelte           Studio shell: canvas, controls, palette strip
+│   ├── App.svelte           Studio shell: canvas, controls, palette grid
 │   ├── main.js              Svelte entry point
 │   ├── core/                Unchanged WebGL gradient engine
 │   │   ├── index.js
@@ -64,7 +64,7 @@ chaotic-mesh/
 │   │       ├── framing.js        Centered crop framing adapter
 │   │       ├── grain.js          Deterministic grain pass
 │   │       └── renderer.js       Renderer lifecycle and size limits
-│   ├── presets/palettes.js      84 palette entries and mesh IDs
+│   ├── presets/palettes.js      85 palette entries and mesh IDs
 │   └── styles/studio.scss       Dark studio styles and breakpoints
 ├── tests/                   Node test suites for export and framing
 ├── index.html               Vite HTML shell
@@ -77,7 +77,7 @@ chaotic-mesh/
 - The header holds the wordmark, a short note, and the Export button.
 - The intro block contains the studio title and the edition badge.
 - The workspace is a two-column layout: the preview section on the left, and the controls aside on the right. Controls cover the composition seed, four color swatches with hex inputs, grain, and the randomize/export actions.
-- The presets section sits below the workspace with a heading, previous/next buttons, and a horizontally scrolling grid of palette cards.
+- The presets section sits below the workspace with a heading, palette count, and a responsive grid of all palette cards. The page scrolls vertically through the collection.
 - The footer closes the page; the export dialog opens as a modal overlay with a preview panel and export controls.
 - Breakpoints at 1450, 1100, 800, and 560 pixels adapt the workspace, controls, palette grid, and footer.
 

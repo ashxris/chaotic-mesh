@@ -620,48 +620,16 @@ input[type="range"]::-moz-range-thumb {
 }
 .presets-grid {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: clamp(190px, 17vw, 240px);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 16px;
   max-width: 100%;
   min-width: 0;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
-  scroll-padding-inline: 4px;
   padding: 6px 4px 20px;
-  scrollbar-width: thin;
-  scrollbar-color: #5a6250 #222426;
-}
-.presets-grid::-webkit-scrollbar {
-  height: 5px;
-}
-.presets-grid::-webkit-scrollbar-track {
-  background: #222426;
-  border-radius: 6px;
-}
-.presets-grid::-webkit-scrollbar-thumb {
-  background: #5a6250;
-  border-radius: 6px;
-}
-.palette-navigation {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  flex-shrink: 0;
 }
 .palette-count {
   font-size: 11px;
-  margin-right: 12px;
-}
-.palette-navigation .icon-button {
-  border-color: var(--line);
-}
-.previous-palettes svg {
-  transform: rotate(180deg);
 }
 .preset-card {
-  scroll-snap-align: start;
   background: transparent;
   text-align: left;
   padding: 0;
@@ -1167,7 +1135,7 @@ input[type="range"]::-moz-range-thumb {
     max-width: min(100%, calc(350px * var(--canvas-ratio)));
   }
   .presets-grid {
-    grid-auto-columns: 210px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
   .preset-info {
     font-size: 11px;
@@ -1331,7 +1299,7 @@ input[type="range"]::-moz-range-thumb {
     font-size: 17px;
   }
   .presets-grid {
-    grid-auto-columns: min(72vw, 240px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
   .presets-heading {

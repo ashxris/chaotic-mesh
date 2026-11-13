@@ -1,6 +1,12 @@
-// Exact four-color palettes from Color Hunt. Display names are local studio names.
+// Color Hunt palettes plus an original monochrome palette. Display names are local studio names.
 // Source URLs are reference metadata; the app makes no requests to Color Hunt.
 export const palettePresets = [
+  {
+    name: "Black & white",
+    meshId: 1061,
+    meshColors: ["#000000", "#555555", "#aaaaaa", "#ffffff"],
+    source: null,
+  },
   {
     name: "Fern light",
     meshId: 114,

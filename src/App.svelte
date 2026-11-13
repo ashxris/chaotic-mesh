@@ -37,28 +37,10 @@
   let timer;
   let noticeTimer;
   let thumbnailTimer;
-  let paletteRail;
   let previewObserver;
-  let canScrollBackward = false;
-  let canScrollForward = false;
   const paletteNodes = new Map();
   const previewQueue = new Set();
 
-  function updatePaletteScroll() {
-    if (!paletteRail) return;
-    canScrollBackward = paletteRail.scrollLeft > 2;
-    canScrollForward =
-      paletteRail.scrollLeft + paletteRail.clientWidth <
-      paletteRail.scrollWidth - 2;
-  }
-  function scrollPalettes(direction) {
-    paletteRail?.scrollBy({
-      left: direction * Math.max(240, paletteRail.clientWidth * 0.8),
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "auto"
-        : "smooth",
-    });
-  }
   function observePalette(node, index) {
     paletteNodes.set(index, node);
     if (previewObserver) previewObserver.observe(node);
@@ -200,7 +182,6 @@
     try {
       initializeRenderer();
       mounted = true;
-      updatePaletteScroll();
       // Render only cards near the scroll viewport, one at a time between interactions.
       if ("IntersectionObserver" in window) {
         previewObserver = new IntersectionObserver(
@@ -213,11 +194,11 @@
             }
             scheduleThumbnail();
           },
-          { root: paletteRail, rootMargin: "0px 160px", threshold: 0.01 },
+          { rootMargin: "160px 0px", threshold: 0.01 },
         );
         for (const node of paletteNodes.values()) previewObserver.observe(node);
       } else {
-        // Older browsers still get a usable, exact-color palette strip immediately.
+        // Older browsers still get a usable, exact-color palette grid immediately.
         for (let index = 0; index < Math.min(6, palettePresets.length); index++)
           previewQueue.add(index);
         scheduleThumbnail();
@@ -236,7 +217,7 @@
   });
 </script>
 
-<svelte:window on:keydown={keydown} on:resize={updatePaletteScroll} />
+<svelte:window on:keydown={keydown} />
 <div
   class="studio-shell"
   aria-hidden={showExport ? "true" : undefined}
@@ -419,33 +400,14 @@
           <p class="eyebrow">A place to start</p>
           <h2 id="presets-title">Good things come in palettes.</h2>
         </div>
-        <div class="palette-navigation">
-          <span class="palette-count muted"
-            >{palettePresets.length} palettes to explore</span
-          >
-          <button
-            class="icon-button small previous-palettes"
-            aria-label="Previous palettes"
-            disabled={!canScrollBackward}
-            on:click={() => scrollPalettes(-1)}
-            ><Icon name="chevron" size={16} /></button
-          >
-          <button
-            class="icon-button small"
-            aria-label="Next palettes"
-            disabled={!canScrollForward}
-            on:click={() => scrollPalettes(1)}
-            ><Icon name="chevron" size={16} /></button
-          >
-        </div>
+        <span class="palette-count muted"
+          >{palettePresets.length} palettes to explore</span
+        >
       </div>
       <div
         class="presets-grid"
-        bind:this={paletteRail}
-        on:scroll={updatePaletteScroll}
         role="region"
-        aria-label="Color palettes — scroll horizontally to explore"
-        tabindex="0"
+        aria-label="Color palettes"
       >
         {#each palettePresets as preset, index}<button
             class="preset-card"

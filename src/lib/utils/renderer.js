@@ -2,8 +2,8 @@ import { gradient } from "../../core";
 import { applyGrain } from "./grain";
 import { frameLandscape } from "./framing";
 
-export const MAX_PIXELS = 32_000_000;
-export const MAX_SIDE = 8192;
+export const MAX_PIXELS = 60_000_000;
+export const MAX_SIDE = 10240;
 let baseKey = "";
 let basePixels;
 let surface;
@@ -47,7 +47,7 @@ export function validateSize(width, height) {
   if (width > hardwareLimit || height > hardwareLimit)
     return `Each side can be up to ${hardwareLimit.toLocaleString()} px on this device.`;
   if (width * height > MAX_PIXELS)
-    return "Choose a size below 32 megapixels to keep exports reliable.";
+    return `Choose a size up to ${MAX_PIXELS / 1_000_000} megapixels to keep exports reliable.`;
   return "";
 }
 

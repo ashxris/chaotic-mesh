@@ -22,6 +22,8 @@
     ["hd", "HD", 1920, 1080],
     ["qhd", "QHD", 2560, 1440],
     ["4k", "4K landscape", 3840, 2160],
+    ["8k", "8K landscape", 7680, 4320],
+    ["10k", "10K landscape", 10240, 5760],
     ["portrait", "4K portrait", 2160, 3840],
     ["square", "Square", 3000, 3000],
   ];

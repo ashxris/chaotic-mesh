@@ -24,10 +24,10 @@ Open the local address printed by Vite. For a production build, run `npm run bui
 - Open Export from the header or the button directly below the space-bar hint.
 - Grain is a deterministic monochrome finishing layer: 0% leaves the original pixels unchanged.
 - Open Export to enter width and height in pixels, choose a preset, lock the aspect ratio, or swap dimensions.
-- Presets: HD (1920 × 1080), QHD (2560 × 1440), 4K landscape (3840 × 2160), 4K portrait (2160 × 3840), and square (3000 × 3000).
+- Presets: HD (1920 × 1080), QHD (2560 × 1440), 4K landscape (3840 × 2160), 8K landscape (7680 × 4320), 10K landscape (10240 × 5760), 4K portrait (2160 × 3840), and square (3000 × 3000).
 - PNG is the default. JPEG and WebP offer adjustable encoding quality. Browser format support is checked before saving.
 - All downloads include 300-DPI print-density metadata: PNG pHYs, JPEG JFIF, or WebP EXIF. Some viewers ignore print metadata, especially in WebP. Pixel dimensions remain authoritative; printed inches equal pixels divided by 300.
-- Each side supports up to 8192 pixels, subject to the graphics hardware limit, with a total limit of 32 megapixels.
+- Each side supports up to 10240 pixels, subject to the graphics hardware limit, with a total limit of 60 megapixels. 8K and 10K are rendered at their full pixel dimensions; availability depends on the device's graphics limits.
 - The main and export previews use the same full-resolution rendered image as the download. The composition stays anchored to the 3840 × 2160 landscape. Portrait, square, and other aspect ratios take a centered crop; they never squeeze or stretch the landscape. The crop is rendered directly at the requested pixel dimensions, then grain is applied at that resolution.
 
 ## Palette sources

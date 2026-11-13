@@ -9,7 +9,7 @@ const near = (actual, expected) =>
     `${actual} should equal ${expected}`,
   );
 
-function fakeRenderer() {
+function fakeRenderer(hardwareLimit = 8192) {
   const canvas = { width: 0, height: 0 };
   const sizes = [];
   const viewports = [];
@@ -26,7 +26,8 @@ function fakeRenderer() {
       gl: {
         MAX_VIEWPORT_DIMS: "viewport",
         MAX_RENDERBUFFER_SIZE: "buffer",
-        getParameter: (name) => (name === "viewport" ? [8192, 8192] : 8192),
+        getParameter: (name) =>
+          name === "viewport" ? [hardwareLimit, hardwareLimit] : hardwareLimit,
         isContextLost: () => false,
         viewport: (...args) => viewports.push(args),
       },
@@ -74,6 +75,7 @@ test("landscape sizes preserve the whole composition; square and ultrawide crop 
     [3840, 2160],
     [1920, 1080],
     [7680, 4320],
+    [10240, 5760],
   ]) {
     assert.deepEqual(getLandscapeCrop(width, height), {
       x: 0,
@@ -104,6 +106,8 @@ test("native-resolution framing keeps circles circular and restores landscape af
     [1536, 1024],
     [4200, 1800],
     [3840, 2160],
+    [7680, 4320],
+    [10240, 5760],
   ]) {
     frameLandscape(renderer, width, height);
     const matrix = renderer.minigl.commonUniforms.projectionMatrix.value;
@@ -133,7 +137,7 @@ test("native-resolution framing keeps circles circular and restores landscape af
 test("preview/export renderer produces center-cropped pixels rather than a squeezed full landscape", async (t) => {
   // A deterministic software field substitutes for WebGL, allowing the full
   // adapter/compositing path to be checked without browser or graphics access.
-  const renderer = fakeRenderer();
+  const renderer = fakeRenderer(16384);
   const canvas = renderer.minigl.canvas;
   renderer.initGradient = () => {};
   renderer.changeGradientColors = () => {};
@@ -199,7 +203,7 @@ test("preview/export renderer produces center-cropped pixels rather than a squee
       `from "./${name}"`,
       `from ${JSON.stringify(new URL(`../src/lib/utils/${name}.js`, import.meta.url).href)}`,
     );
-  const { renderGradient } = await import(
+  const { renderGradient, validateSize } = await import(
     "data:text/javascript;base64," + Buffer.from(source).toString("base64")
   );
   const settings = {
@@ -210,6 +214,13 @@ test("preview/export renderer produces center-cropped pixels rather than a squee
     grain: 0,
   };
   renderGradient(settings);
+  assert.equal(validateSize(7680, 4320), "");
+  assert.equal(validateSize(10240, 5760), "");
+  assert.equal(validateSize(5760, 10240), "");
+  assert.match(validateSize(10241, 5760), /Each side/);
+  assert.match(validateSize(10240, 6000), /60 megapixels/);
+  assert.match(validateSize(0, 5760), /whole number/);
+  assert.match(validateSize(10240.5, 5760), /whole number/);
   const portrait = renderGradient({ ...settings, width: 90, height: 160 });
   assert.equal(portrait.width, 90);
   assert.equal(portrait.height, 160);
